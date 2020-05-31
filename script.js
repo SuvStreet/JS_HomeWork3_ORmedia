@@ -1,4 +1,4 @@
-function Laptop(model, serialNumber, yearManufacture, sizeRam, sizeRom, odd, weight){
+function Laptop(name, model, serialNumber, yearManufacture, sizeRam, sizeRom, odd, weight){
     this.name = name;
     this.model = model;
     this.serialNumber = serialNumber;
@@ -16,7 +16,7 @@ function Laptop(model, serialNumber, yearManufacture, sizeRam, sizeRom, odd, wei
     }
 };
 
-function Ultrabook(){
+function Ultrabook(name, model, serialNumber, yearManufacture){
     Laptop.call(this);
     this.setWeight = function(weight){
         if (weight > 1.5)
@@ -32,8 +32,7 @@ function Ultrabook(){
 };
 
 /* Example laptop url: https://catalog.onliner.by/notebook/acer/nhq53er01g */
-var laptopAcer = new Laptop('Predator Helios 300 PH315-52-55FN NH.Q53ER.01G', 'NH.Q53ER.01G', 2019, 8, 512, false, 2.5);
-laptopAcer.name = 'Acer';
+var laptopAcer = new Laptop('Acer', 'Predator Helios 300 PH315-52-55FN NH.Q53ER.01G', 'NH.Q53ER.01G', 2019, 8, 512, false, 2.5);
 console.log("Name laptop: " + laptopAcer.name);
 console.log("Model laptop: " + laptopAcer.model);
 console.log("Serial number laptop: " + laptopAcer.serialNumber);
@@ -44,11 +43,7 @@ console.log("Size RAM: " + laptopAcer.getSizeRam());
 console.log("Size ROM: " + laptopAcer.getSizeRom());
 
 /* Example ultrabook url: https://catalog.onliner.by/notebook/xiaomi/jyu4051cn */
-var ultrabook = new Ultrabook();
-ultrabook.name = 'Xiaomi';
-ultrabook.model = 'Notebook Air 13.3';
-ultrabook.serialNumber = 'JYU4051CN';
-ultrabook.yearManufacture = 2018;
+var ultrabook = new Ultrabook('Xiaomi', 'Notebook Air 13.3', 'JYU4051CN', 2018);
 var weightUltrabook = prompt("Input weight ultrabook = ", 1.8);
 ultrabook.setWeight(weightUltrabook); 
 console.log("");
